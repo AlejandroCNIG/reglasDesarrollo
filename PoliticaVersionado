@@ -1,0 +1,33 @@
+Metodología de numeración de versiones
+
+Es una notación numérica compuesta por tres números (y un cuarto opcional) separados por puntos con la siguiente notación:
+
+major.minor.revision[.entrega]
+
+Cada uno de estos números tienen el siguiente significado:
+
+    major: indica la versión principal del software, consistiendo en un conjunto de funcionalidades concretas que son recogidas y cubiertas en dicha versión.
+    minor: indican funcionalidad menor cubierta en la versión de software entregada.
+    revision: se modifican cuando hay revisiones de código ante fallos de la aplicación.
+    entrega: este dígito tiene el objetivo de llevar la cuenta del número de veces que una entrega se rechaza, por incumplimiento de algún requisitos de la gestión de entregas o del proyecto.
+
+-----------------------------------------------------------------------------------------------
+Criterios para la modificación de versiones
+
+Los criterios para modificar (incrementar) cada uno de los contadores de la etiqueta de versión son los siguientes:
+
+    major: nuevas funcionalidades claves de la aplicación respecto a la versión anterior debido a la inclusión de nuevos requerimientos para el sistema, como la inclusión de nuevos módulos o una revisión completa de los existentes.
+    minor: cambios significativos en la forma en la que se ofrece la funcionalidad existente, corrección de grandes fallos del sistema o nuevas versiones evolutivas que modifican significativamente la funcionalidad ofrecida.
+    revision: se modifica por cada entrega de software que se realice.
+    entrega: al rechazarse una entrega se incrementa este contador en la siguiente. Cuando la entrega se aceptase se crearía un tag público que solo conservaría los tres primeros dígitos (mayor, minor, revision).
+
+-------------------------------------------------------------------------------------------------
+Clasificación para versiones no estables
+
+
+A lo largo de la ejecución del proyecto hay muchas entregas que, aunque se acepten, no tienen por qué considerarse una versión final, bien porque aún no tienen toda la funcionalidad necesaria o bien porque no se consideran suficientemente maduras.
+No existe, en la política de versiones básica, un diferenciación en la numeración que indique que se trata de una versión definitiva o no. Desde el momento en que se publica una versión con los tres dígitos se considera versión final.
+Para poder añadir cierta flexibilidad en la publicación de versiones no definitivas, se añade una categorización complementaria: Alpha, Beta, Release Candidata
+Con esta categorización podríamos tener varias versiones públicas alpha y/o betas y por último alguna candidata antes de publicar la versión final. Serían versiones públicas para los usuarios pero dejando claro que no son finales. Esto puede ser de mucha utilidad sobre todo al principio del proyecto si se quieren mostrar resultados, aunque no sean definitivos. Ejemplo de este etiquetado podría ser 1.0.0Beta, 1.0.0RC.
+En ocasiones puede ser interesante tener varias betas o candidatas de una versión. En este caso se complementaría el nombrado con una secuencia de números. Ejemplos de este etiquetado sería: 1.0.0Beta1,1.0.0Beta2, 1.0.0RC1,1.0.0RC2.
+Este tratamiento es distinto tener versiones finales y cambiar el tercer dígito para corregir errores, esto nos obligaría a tener un parche de actualización entre ambas versiones.
